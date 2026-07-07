@@ -8,7 +8,7 @@ export default defineConfig({
    base: '/azm-vuejs-project/',
     publicPath: process.env.NODE_ENV === 'production'
   ? '/azm-vuejs-project/'
-  : '/'
+  : '/',
   plugins: [
     vue(),
   ],
