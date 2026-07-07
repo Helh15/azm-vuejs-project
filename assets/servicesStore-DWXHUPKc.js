@@ -1,0 +1,1 @@
+import{I as e,d as t}from"./_plugin-vue_export-helper-Croben1y.js";import{a as n,u as r}from"./index-BEvWanwM.js";var i=r(`services`,()=>{let r=e(n),i=t(()=>r.value.slice(0,3));function a(){return r.value}function o(e){return r.value.find(t=>t.service_id===Number(e))}return{services:r,featuredServices:i,fetchServices:a,getServiceById:o}});export{i as t};
