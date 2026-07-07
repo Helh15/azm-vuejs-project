@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800&display=swap');
+
+:root {
+  --azm-primary: #0e7fa3;
+  --azm-primary-dark: #075b78;
+  --azm-accent: #2ba6b8;
+  --azm-soft: #e6f6fa;
+  --azm-secondary: #e6f6fa;
+  --azm-bg: #f7fafc;
+  --azm-text: #1f2937;
+  --azm-ink: #1f2937;
+  --azm-muted: #6b7280;
+  --azm-border: #ddeaf0;
+  --azm-focus: #ffbf47;
+  --azm-danger: #b3261e;
+  --azm-success: #1a7f4e;
+  --azm-warning: #b45309;
+  --azm-radius: 12px;
+  --bs-body-font-family: 'Cairo', system-ui, sans-serif;
+  --bs-body-color: var(--azm-text);
+  --bs-primary: var(--azm-primary);
+  --bs-primary-rgb: 14, 127, 163;
+  --bs-link-color: var(--azm-primary-dark);
+  --bs-link-hover-color: var(--azm-primary);
+}
+
+* {
+  letter-spacing: 0;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #fff;
+  color: var(--azm-text);
+  font-size: 1rem;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--azm-focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.section-band {
+  padding: 48px 0;
+}
+
+.section-band-soft {
+  background: linear-gradient(180deg, #fbfdfe 0%, #f4f9fb 100%);
+}
+
+.azm-card {
+  border: 1px solid var(--azm-border);
+  border-radius: var(--azm-radius);
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(7, 91, 120, 0.05);
+}
+
+/* ===== تنسيقات موحدة تستخدم في كل الصفحات ===== */
+
+/* تدرج العلامة للخلفيات الداكنة (هيرو الصفحات، الإحصائيات، بانر الخدمة، بطاقة الرؤية) */
+.bg-brand-gradient {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.15), transparent 45%),
+    linear-gradient(120deg, var(--azm-primary-dark) 0%, var(--azm-primary) 60%, var(--azm-accent) 100%);
+  color: #fff;
+}
+
+/* تأثير رفع البطاقة عند التمرير */
+.lift-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(7, 91, 120, 0.14);
+}
+
+/* رأس البطاقة المتدرج (بطاقات الخدمات والطلبات) */
+.card-media {
+  height: 150px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.28), transparent 55%),
+    linear-gradient(135deg, var(--azm-primary) 0%, var(--azm-accent) 100%);
+  color: rgba(255, 255, 255, 0.55);
+  position: relative;
+  z-index: 0;
+}
+
+/* الأيقونة العائمة أعلى جسم البطاقة */
+.card-float-icon {
+  width: 62px;
+  height: 62px;
+  background: #fff;
+  border: 1px solid var(--azm-border);
+  box-shadow: 0 8px 20px rgba(7, 91, 120, 0.14);
+  margin-top: -31px;
+  margin-bottom: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* سعر / قيمة بارزة داخل البطاقة */
+.price-text {
+  color: var(--azm-primary-dark);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* أيقونة دائرية فوق خلفية داكنة */
+.icon-on-dark {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+/* هيرو داخلي موحد لصفحات المحتوى */
+.page-hero {
+  padding: 44px 0;
+}
+
+.page-hero-lead {
+  max-width: 640px;
+  font-size: 1.05rem;
+  color: #eafcff;
+}
+
+.text-muted-azm {
+  color: var(--azm-muted);
+}
+
+.btn {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 10px;
+}
+
+.btn-azm {
+  --bs-btn-bg: var(--azm-primary);
+  --bs-btn-border-color: var(--azm-primary);
+  --bs-btn-hover-bg: var(--azm-primary-dark);
+  --bs-btn-hover-border-color: var(--azm-primary-dark);
+  --bs-btn-active-bg: var(--azm-primary-dark);
+  --bs-btn-active-border-color: var(--azm-primary-dark);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+}
+
+.btn-outline-azm {
+  --bs-btn-color: var(--azm-primary-dark);
+  --bs-btn-border-color: var(--azm-primary);
+  --bs-btn-hover-bg: var(--azm-primary);
+  --bs-btn-hover-border-color: var(--azm-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--azm-primary-dark);
+  --bs-btn-active-border-color: var(--azm-primary-dark);
+  --bs-btn-active-color: #fff;
+  background: #fff;
+}
+
+.btn-light-azm {
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-color: var(--azm-primary-dark);
+  --bs-btn-hover-bg: var(--azm-soft);
+  --bs-btn-hover-border-color: var(--azm-soft);
+  --bs-btn-hover-color: var(--azm-primary-dark);
+}
+
+.form-control,
+.form-select {
+  min-height: 42px;
+  border-color: var(--azm-border);
+  border-radius: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--azm-primary);
+  box-shadow: 0 0 0 0.25rem rgba(14, 127, 163, 0.18);
+}
+
+.icon-circle {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--azm-soft);
+  color: var(--azm-primary-dark);
+}
+
+.status-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  display: inline-block;
+  background: currentColor;
+}
+
+.eyebrow-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--azm-soft);
+  color: var(--azm-primary-dark);
+  border: 1px solid var(--azm-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.status-text {
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.status-text.is-success {
+  color: var(--azm-success);
+}
+
+.status-text.is-danger {
+  color: var(--azm-danger);
+}
+
+.status-text.is-pending {
+  color: var(--azm-warning);
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    --bs-gutter-x: 2.5rem;
+  }
+
+  .section-band {
+    padding: 32px 0;
+  }
+
+  .page-hero {
+    padding: 28px 0;
+  }
+
+  .azm-card.p-5,
+  .azm-card.p-md-5 {
+    padding: 1.5rem !important;
+  }
+
+  .azm-card.p-4 {
+    padding: 1rem !important;
+  }
+
+  .azm-card.p-3 {
+    padding: 0.85rem !important;
+  }
+
+  .card-media {
+    height: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
